@@ -2,7 +2,21 @@
 #include <stdlib.h>
 #include "header1.h"
 
-//void ComparerExclu(Exclu * exclu->som1, Exclu * som2){}
+int genererStation(Station * station){ // générer les stations en fonction des exclusions
+
+     station->tab = malloc(sizeof(int) * 100);
+
+    if (station->tab == NULL)
+    {
+        printf("Échec de l'allocation\n");
+        return EXIT_FAILURE;
+    }
+}
+
+void Repartition(Exclu * exclu, Exclu * som2){ // fonction pour répartir les sommmets dans les stations
+    Station *station;
+    genererStation(&station); // en cours
+}
 
 void afficherExclusions(Exclu *exclu){
     char nomFichier[] = "exclusions"; // ouverture fichier des exclusions
@@ -10,27 +24,26 @@ void afficherExclusions(Exclu *exclu){
     if (fichier == NULL) {
         printf("Erreur lors de l'ouverture d exclusions .\n");
     }
-    int c,nLignes;
 
-
+    int c,nContrainte;
     while((c=fgetc(fichier)) != EOF)
     {
         if(c=='\n')
-            nLignes++;
-    } // récupération du nombre de lignes du fichier exclusions
+            nContrainte++;
+    } // récupération du nombre de contraintes du fichier (nb de lignes)  pour la prochaine boucle
     fseek(fichier, 0, SEEK_SET);// remettre le curseur au début du fichier texte
 
 
-    exclu = (Exclu *)malloc(nLignes * sizeof(Exclu)); // allouer dynamiquement de la mémoire au pointeur de la structure exclusion
+    exclu = (Exclu *)malloc(nContrainte * sizeof(Exclu)); // allouer dynamiquement de la mémoire au pointeur de la structure exclusion
 
-    for (int i = 0; i < nLignes; i++){
+    for (int i = 0; i < nContrainte; i++){
         int som1, som2;
         fscanf(fichier,"%d %d", &som1, &som2);
 
-        exclu[i].som1 = som1;
-        exclu[i].som2 = som2;
-        printf("%d %d\n",exclu[i].som1,exclu[i].som2);
-        //ComparerExclu(&exclu[i].som1, &exclu[i].som2);
+        exclu->som1 = som1;
+        exclu->som2 = som2;
+        printf("%d %d\n",exclu->som1,exclu->som2);// affichage du fichier texte pour vérifier que tout fonctionne
+        Repartition(exclu->som1, exclu->som2);
     }
     free(exclu);
     fclose(fichier);

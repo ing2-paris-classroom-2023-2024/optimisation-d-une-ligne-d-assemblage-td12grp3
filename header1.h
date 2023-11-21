@@ -11,5 +11,10 @@ typedef struct {
 
 } Exclu;
 
+typedef struct {
+    int * tab;
+} Station;
+
+
 
 #endif //OPTIMISATION_D_UNE_LIGNE_D_ASSEMBLAGE_TD12GRP3_HEADER1_H
