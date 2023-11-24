@@ -1,0 +1,3 @@
+void vo(){
+    int coco;
+};

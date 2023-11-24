@@ -1,10 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /Users/ninongroznykh/Desktop/optimisation-d-une-ligne-d-assemblage-td12grp3 -B /Users/ninongroznykh/Desktop/optimisation-d-une-ligne-d-assemblage-td12grp3/cmake-build-debug
--- The C compiler identification is AppleClang 14.0.0.14000029
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
+"C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.2.4/bin/ninja/win/ninja.exe" -G Ninja -S C:\Users\coren\optimisation-d-une-ligne-d-assemblage-td12grp3 -B C:\Users\coren\optimisation-d-une-ligne-d-assemblage-td12grp3\cmake-build-debug
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/ninongroznykh/Desktop/optimisation-d-une-ligne-d-assemblage-td12grp3/cmake-build-debug
+-- Build files have been written to: C:/Users/coren/optimisation-d-une-ligne-d-assemblage-td12grp3/cmake-build-debug
