@@ -129,6 +129,30 @@ optimisation_d_une_ligne_d_assemblage_td12grp3/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/build.make CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/build
 .PHONY : optimisation_d_une_ligne_d_assemblage_td12grp3/fast
 
+exclusions.o: exclusions.c.o
+.PHONY : exclusions.o
+
+# target to build an object file
+exclusions.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/build.make CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/exclusions.c.o
+.PHONY : exclusions.c.o
+
+exclusions.i: exclusions.c.i
+.PHONY : exclusions.i
+
+# target to preprocess a source file
+exclusions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/build.make CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/exclusions.c.i
+.PHONY : exclusions.c.i
+
+exclusions.s: exclusions.c.s
+.PHONY : exclusions.s
+
+# target to generate assembly for a file
+exclusions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/build.make CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/exclusions.c.s
+.PHONY : exclusions.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -153,6 +177,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/build.make CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/main.c.s
 .PHONY : main.c.s
 
+precedence.o: precedence.c.o
+.PHONY : precedence.o
+
+# target to build an object file
+precedence.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/build.make CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/precedence.c.o
+.PHONY : precedence.c.o
+
+precedence.i: precedence.c.i
+.PHONY : precedence.i
+
+# target to preprocess a source file
+precedence.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/build.make CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/precedence.c.i
+.PHONY : precedence.c.i
+
+precedence.s: precedence.c.s
+.PHONY : precedence.s
+
+# target to generate assembly for a file
+precedence.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/build.make CMakeFiles/optimisation_d_une_ligne_d_assemblage_td12grp3.dir/precedence.c.s
+.PHONY : precedence.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +210,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... optimisation_d_une_ligne_d_assemblage_td12grp3"
+	@echo "... exclusions.o"
+	@echo "... exclusions.i"
+	@echo "... exclusions.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... precedence.o"
+	@echo "... precedence.i"
+	@echo "... precedence.s"
 .PHONY : help
 
 
