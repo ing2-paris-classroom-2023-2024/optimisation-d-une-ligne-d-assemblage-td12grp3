@@ -6,6 +6,6 @@ typedef struct {
     int * tab;
 } Station;
 void afficherExclusions();
-void vo ();
+void trou ();
 
 #endif //OPTIMISATION_D_UNE_LIGNE_D_ASSEMBLAGE_TD12GRP3_HEADER1_H
