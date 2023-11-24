@@ -19,6 +19,7 @@ void Repartition(int som1, int som2){ // fonction pour répartir les sommmets da
 }
 
 void afficherExclusions(){
+    int test;
     char nomFichier[] = "exclusions"; // ouverture fichier des exclusions
     FILE *fichier = fopen(nomFichier, "r");
     if (fichier == NULL) {
