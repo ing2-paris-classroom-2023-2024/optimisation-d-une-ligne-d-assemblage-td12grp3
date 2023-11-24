@@ -1,3 +1,3 @@
 void vo(){
-
+    int coco;
 };
