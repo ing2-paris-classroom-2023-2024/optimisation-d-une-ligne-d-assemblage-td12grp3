@@ -79,6 +79,9 @@
 		<Unit filename="/Users/ninongroznykh/Desktop/optimisation-d-une-ligne-d-assemblage-td12grp3/exclusions.c">
 			<Option target="optimisation_d_une_ligne_d_assemblage_td12grp3"/>
 		</Unit>
+		<Unit filename="/Users/ninongroznykh/Desktop/optimisation-d-une-ligne-d-assemblage-td12grp3/header1.h">
+			<Option target="optimisation_d_une_ligne_d_assemblage_td12grp3"/>
+		</Unit>
 		<Unit filename="/Users/ninongroznykh/Desktop/optimisation-d-une-ligne-d-assemblage-td12grp3/main.c">
 			<Option target="optimisation_d_une_ligne_d_assemblage_td12grp3"/>
 		</Unit>
