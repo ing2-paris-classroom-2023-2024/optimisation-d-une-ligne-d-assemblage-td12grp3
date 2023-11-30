@@ -30,10 +30,10 @@ bool couleurDispoPourSommet(int sommet, char c) {
 
 // Algorithme de coloration de graphe
 void colorGraph() {
-    for (int vertex = 0; vertex < numOperations; vertex++) {
+    for (int sommet = 0; sommet < numOperations; sommet++) {
         for (char c = 'A'; c < 'A' + numColors; c++) {
-            if (couleurDispoPourSommet(vertex, c)) {
-                operations[vertex].color = c;
+            if (couleurDispoPourSommet(sommet, c)) {
+                operations[sommet].color = c;
                 break;
             }
         }
