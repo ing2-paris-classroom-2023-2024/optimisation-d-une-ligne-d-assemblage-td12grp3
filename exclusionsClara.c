@@ -83,7 +83,7 @@ void performColoring() {
     }
 
     // Lecture des exclusions depuis le fichier
-    readExclusionsFromFile("exclusions.txt");
+    readExclusionsFromFile("exclusionExemple.txt");
 
     // Applique l'algorithme de coloration
     colorationGraphe();
