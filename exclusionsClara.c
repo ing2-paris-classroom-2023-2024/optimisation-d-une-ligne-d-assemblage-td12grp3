@@ -29,7 +29,7 @@ bool couleurDispoPourSommet(int sommet, char c) {
 }
 
 // Algorithme de coloration de graphe
-void colorGraph() {
+void colorationGraphe() {
     for (int sommet = 0; sommet < numOperations; sommet++) {
         for (char c = 'A'; c < 'A' + numColors; c++) {
             if (couleurDispoPourSommet(sommet, c)) {
@@ -86,7 +86,7 @@ void performColoring() {
     readExclusionsFromFile("exclusions.txt");
 
     // Applique l'algorithme de coloration
-    colorGraph();
+    colorationGraphe();
 
     // Affiche les couleurs attribuées à chaque opération
     printf("Coloration des opérations :\n");
