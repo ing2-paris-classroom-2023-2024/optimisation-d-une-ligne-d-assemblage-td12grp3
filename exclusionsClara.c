@@ -21,9 +21,9 @@ int numOperations;
 int numColors;
 
 // Vérifie si une couleur peut être attribuée à un sommet donné
-bool isColorValid(int vertex, char c) {
+bool isColorValid(int sommet, char c) {
     for (int i = 0; i < numOperations; i++)
-        if (exclusionMatrix[vertex][i] && c == operations[i].color)
+        if (exclusionMatrix[sommet][i] && c == operations[i].color)
             return false;
     return true;
 }
