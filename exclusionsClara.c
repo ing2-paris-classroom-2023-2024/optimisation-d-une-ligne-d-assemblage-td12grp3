@@ -21,7 +21,7 @@ int numOperations;
 int numColors;
 
 // Vérifie si une couleur peut être attribuée à un sommet donné
-bool isColorValid(int sommet, char c) {
+bool couleurDispoPourSommet(int sommet, char c) {
     for (int i = 0; i < numOperations; i++)
         if (exclusionMatrix[sommet][i] && c == operations[i].color)
             return false;
@@ -32,7 +32,7 @@ bool isColorValid(int sommet, char c) {
 void colorGraph() {
     for (int vertex = 0; vertex < numOperations; vertex++) {
         for (char c = 'A'; c < 'A' + numColors; c++) {
-            if (isColorValid(vertex, c)) {
+            if (couleurDispoPourSommet(vertex, c)) {
                 operations[vertex].color = c;
                 break;
             }
