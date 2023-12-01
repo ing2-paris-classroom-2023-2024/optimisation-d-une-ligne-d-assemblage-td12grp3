@@ -31,7 +31,7 @@ int main() {
     precedences();
     operations();
     temps_cycle();
-    printf("ça fonctionne pas assez chef");
+    printf("Ca fonctionne pas assez chef");
     return 0;
 }
 

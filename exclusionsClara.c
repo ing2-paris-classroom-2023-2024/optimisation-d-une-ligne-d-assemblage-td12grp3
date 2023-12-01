@@ -14,13 +14,13 @@ struct Station {
 int lireOperations(char *nom_fichier, int *operations) {
     FILE *f_operations = fopen(nom_fichier, "r");
     if (f_operations == NULL) {
-        perror("Erreur lors de la lecture du fichier d'opérations0");
+        perror("Erreur lors de la lecture du fichier d'opérations");
         return -1;
     }
 
     int taille = 0;
 
-    while (fscanf(f_operations, "%d ", &operations[taille]) == 1) {
+    while (fscanf(f_operations, "%d", &operations[taille]) == 1) {
         ++taille;
     }
 
@@ -31,9 +31,9 @@ int lireOperations(char *nom_fichier, int *operations) {
 
 // Fonction pour lire les paires d'opérations à partir d'un fichier
 int lireExclusions(char *nom_fichier, int exclusions[][2]) {
-    FILE *f_exclusions = fopen("exclusions", "r");
+    FILE *f_exclusions = fopen(nom_fichier, "r");
     if (f_exclusions == NULL) {
-        perror("Erreur lors de la lecture du fichier d'exclusions1");
+        perror("Erreur lors de la lecture du fichier d'exclusions");
         return -1;
     }
 
@@ -88,9 +88,8 @@ void affecterOperation(int operation, struct Station *stations, int *nombre_stat
 void repartitionOperations() {
     int V[MAX_OPERATIONS];
     int taille_V = lireOperations("operations_a_venir.txt", V);
-
     int E[MAX_OPERATIONS][2];
-    int taille_E = lireExclusions("exclusions.txt", E);
+    int taille_E = lireExclusions("exclusions", E);
 
     // Si la lecture des fichiers a échoué, quitter la fonction
     if (taille_V == -1 || taille_E == -1) {
@@ -108,10 +107,10 @@ void repartitionOperations() {
 
     // Afficher la répartition des opérations par station
     for (int i = 0; i < nombre_stations; ++i) {
-        printf("Station %d: ", i + 1);
+        printf("Station %d : ", i + 1);
         for (int j = 0; j < stations[i].taille; ++j) {
             printf("%d ", stations[i].operations[j]);
         }
         printf("\n");
-        }
+    }
 }
