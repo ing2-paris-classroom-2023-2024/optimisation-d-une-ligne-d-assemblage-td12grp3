@@ -4,7 +4,7 @@
 
 #include "header1.h"
 
-int genererStation(int som,int numero, Station *station){ // générer les stations en fonction des exclusions
+int genererStation(int som, Station *station){ // générer les stations en fonction des exclusions
 
     station->tab = malloc(sizeof(int) * 100);
 
@@ -13,20 +13,20 @@ int genererStation(int som,int numero, Station *station){ // générer les stati
         printf("Échec de l'allocation\n");
         return EXIT_FAILURE;
     }
-
+    //station->tab = som;
 
 
 }
 
 void Repartition(int som1, int som2, int countStation) { // fonction pour répartir les sommets dans les stations
-    Station *station=malloc(sizeof(int*)*100);
+    Station *station;
     int same1, same2;
 
 
 
     // tester si sommet 1 est déjà placé
     for (int i = 1; i <= countStation; i++) {
-        for (int j; j < strlen(station->tab); j++) {
+        for (int j; j < sizeof(station[i].tab); j++) {
             if (station[i].tab[j] == som1) {
                 same1 = i;
             } else
@@ -41,10 +41,10 @@ void Repartition(int som1, int som2, int countStation) { // fonction pour répar
 
     if (same1 >= 0) {
         for (int i = 1; i <= countStation; i++) { // alors on vérifie tous num de chacun des tab de toutes les stations précédentes pour voir si le sommet 2 est déjà dans une station
-            for (int j; j < strlen( station[i].tab); j++) {
+            for (int j; j < sizeof( station[i].tab); j++) {
                 if (station[i].tab[j] == som2) { // si le sommet 2 n'appartient à aucune des stations ou s'il se trouve dans la même station que le som1
                     if (station[same1].tab[j] == som2){ // si le sommet 2 est dans la même station que le sommet 1
-                        genererStation(som2,  &station[(countStation + 1)]); // on crée une nouvelle station
+                        genererStation(som2,  &station[(countStation + 1)]);  //(manque un element dans l'appel) on crée une nouvelle station
                         countStation++; // on ajoute 1 au compteur
                     }// si le sommet 2 n'est pas dans la même station que le sommet 1 pas besoin de le changer de place
                 }
@@ -64,7 +64,7 @@ void Repartition(int som1, int som2, int countStation) { // fonction pour répar
 
         // tester si sommet 2 est déjà placé
         for (int i = 1; i <= countStation; i++) {
-            for (int j; j < strlen(station[i].tab); j++) {
+            for (int j; j < sizeof(station[i].tab); j++) {
                 if (station[i].tab[j] == som2) {
                     same2 = i;
                 } else
@@ -91,8 +91,8 @@ void Repartition(int som1, int som2, int countStation) { // fonction pour répar
                 countStation = countStation+2; // on ajoute 2 stations
             }
             else{ // s'il y a déjà des stations créées
-                station[1].tab= som1; //on place les sommets dans les deux premières stations créées
-                station[2].tab= som2;
+                station[1].tab;//rajouter [i] en fonction du sommet que l'on veut remplacer = som1; //on place les sommets dans les deux premières stations créées
+                station[2].tab;//rajouter [i] en fonction du sommet que l'on veut remplacer = som2;
 
             }
 
@@ -100,14 +100,6 @@ void Repartition(int som1, int som2, int countStation) { // fonction pour répar
     }
 
     // // // // // // //
-
-
-
-
-
-
-
-
 
 
 
@@ -127,13 +119,13 @@ void Repartition(int som1, int som2, int countStation) { // fonction pour répar
 
     // si les deux sont déjà dans des stations on vérifie qu'ils ne soient pas dans la même station
     if (same1 >0 & same2 >0) {
-        if (same1 = same2){
+        if (same1 == same2){
             genererStation(som2,&station[(same1+1)]); // on place le som2 dans la station suivante pour qu'il ne soit pas avec le som1
         }
     }
 
 
-    printf
+
 
 }
 

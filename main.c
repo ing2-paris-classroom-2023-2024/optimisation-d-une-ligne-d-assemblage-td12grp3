@@ -26,7 +26,7 @@ void temps_cycle(){
 }
 
 int main() {
-    afficherExclusions();
+    recupererExclusions();
     precedences();
     operations();
     temps_cycle();
