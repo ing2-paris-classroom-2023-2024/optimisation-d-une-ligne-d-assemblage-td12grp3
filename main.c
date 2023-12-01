@@ -26,12 +26,12 @@ void temps_cycle(){
 }
 
 int main() {
-    recupererExclusions();
+    repartitionOperations();
+    //recupererExclusions();
     precedences();
     operations();
     temps_cycle();
-    printf("bien");
+    printf("ça fonctionne pas assez chef");
     return 0;
 }
 
-"chngement de clara, encore le changement "

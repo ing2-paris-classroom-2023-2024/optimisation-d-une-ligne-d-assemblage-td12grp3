@@ -4,6 +4,7 @@
 typedef struct {
     int * tab;
 } Station;
+void repartitionOperations();
 void recupererExclusions();
 void vo ();
 

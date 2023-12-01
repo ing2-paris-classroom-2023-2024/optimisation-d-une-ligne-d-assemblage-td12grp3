@@ -14,13 +14,13 @@ struct Station {
 int lireOperations(char *nom_fichier, int *operations) {
     FILE *f_operations = fopen(nom_fichier, "r");
     if (f_operations == NULL) {
-        perror("Erreur lors de la lecture du fichier d'opérations");
+        perror("Erreur lors de la lecture du fichier d'opérations0");
         return -1;
     }
 
     int taille = 0;
 
-    while (fscanf(f_operations, "%d", &operations[taille]) == 1) {
+    while (fscanf(f_operations, "%d ", &operations[taille]) == 1) {
         ++taille;
     }
 
@@ -31,9 +31,9 @@ int lireOperations(char *nom_fichier, int *operations) {
 
 // Fonction pour lire les paires d'opérations à partir d'un fichier
 int lireExclusions(char *nom_fichier, int exclusions[][2]) {
-    FILE *f_exclusions = fopen(nom_fichier, "r");
+    FILE *f_exclusions = fopen("exclusions", "r");
     if (f_exclusions == NULL) {
-        perror("Erreur lors de la lecture du fichier d'exclusions");
+        perror("Erreur lors de la lecture du fichier d'exclusions1");
         return -1;
     }
 
@@ -87,10 +87,10 @@ void affecterOperation(int operation, struct Station *stations, int *nombre_stat
 // Fonction principale
 void repartitionOperations() {
     int V[MAX_OPERATIONS];
-    int taille_V = lireOperations("operations_a_faire.txt", V);
+    int taille_V = lireOperations("operations_a_venir.txt", V);
 
     int E[MAX_OPERATIONS][2];
-    int taille_E = lireExclusions("exclusion.txt", E);
+    int taille_E = lireExclusions("exclusions.txt", E);
 
     // Si la lecture des fichiers a échoué, quitter la fonction
     if (taille_V == -1 || taille_E == -1) {
