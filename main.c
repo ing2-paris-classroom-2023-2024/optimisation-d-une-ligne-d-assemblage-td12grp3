@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "header1.h"
-
+#include "headerPrecedence.h"
 void precedences(){
     char nomFichier[] = "precedences.txt"; // ouverture fichier des precedences
     FILE *fichier = fopen(nomFichier, "r");
@@ -26,7 +26,9 @@ void temps_cycle(){
 }
 
 int main() {
-    repartitionOperations();
+    Graphe *graphe1;
+    graphe1 = lire_graphe("precedence.txt",graphe1);
+
     //recupererExclusions();
     precedences();
     operations();
