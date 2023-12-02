@@ -27,10 +27,10 @@ void temps_cycle(){
 
 int main() {
     Graphe *graphe1;
-    graphe1 = lire_graphe("precedence.txt",graphe1);
-
+    //graphe1 = lire_graphe("precedence.txt",graphe1);
+    repartitionOperations();
     //recupererExclusions();
-    precedences();
+
     operations();
     temps_cycle();
     printf("Ca fonctionne pas assez chef");

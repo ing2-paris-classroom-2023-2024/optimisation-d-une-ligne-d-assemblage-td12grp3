@@ -19,10 +19,20 @@ int lireOperations(char *nom_fichier, int *operations) {
     }
 
     int taille = 0;
+    int blc=0;
+    int blc2;
+    for (int j = 0; j < 35; j++) {
+        taille++;
+        fscanf(f_operations, "%d %d", &blc2,&blc);
+        operations[j]=taille;
 
-    while (fscanf(f_operations, "%d", &operations[taille]) == 1) {
-        ++taille;
+        printf("taille :%d  \n",taille);
     }
+    for (int j = 0; j < 35; j++) {
+        printf("%d\n",operations[j]);
+
+    }
+
 
     fclose(f_operations);
 
@@ -87,12 +97,14 @@ void affecterOperation(int operation, struct Station *stations, int *nombre_stat
 // Fonction principale
 void repartitionOperations() {
     int V[MAX_OPERATIONS];
-    int taille_V = lireOperations("operations_a_venir.txt", V);
+
+    int taille_V = lireOperations("operations.txt", V);
     int E[MAX_OPERATIONS][2];
     int taille_E = lireExclusions("exclusions", E);
 
     // Si la lecture des fichiers a échoué, quitter la fonction
     if (taille_V == -1 || taille_E == -1) {
+
         return;
     }
 
@@ -109,8 +121,9 @@ void repartitionOperations() {
     for (int i = 0; i < nombre_stations; ++i) {
         printf("Station %d : ", i + 1);
         for (int j = 0; j < stations[i].taille; ++j) {
-            printf("%d ", stations[i].operations[j]);
+            printf("%d, ", stations[i].operations[j]);
         }
         printf("\n");
     }
+
 }
